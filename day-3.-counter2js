@@ -1,3 +1,27 @@
+const createCounterFn = function(initialVal){
+  let counter = initialVal;
+  const increment = () => {
+    return ++counter;
+  }
+  const decrement = () => {
+    return --counter;
+  }
+  const reset = () => {
+    counter = initialVal;
+    return counter;
+  }
+
+  return {
+    increment,
+    decrement,
+    reset
+  }
+}
+
+var counterFn = createCounterFn();
+counterFn();//1
+counterFn();//2
+
 class Counter {
   constructor(n) {
     this.n = n;
